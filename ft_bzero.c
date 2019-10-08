@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_bzero.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 23:08:14 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/08 03:00:35 by mle-floc         ###   ########.fr       */
+/*   Created: 2019/10/08 21:25:07 by mle-floc          #+#    #+#             */
+/*   Updated: 2019/10/08 21:28:21 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+void ft_bzero(void *s, size_t n)
 {
-	char tmp;
+	int c;
 
-	while (*s != (char)c)
-
-		if (!*s++ == '/0')
-			return (0);
-	return (char *)s;
-}
-
-int main(int argc, char const *argv[]) {
-  int c;
-  char test[] = "This is a string";
-
-  c = 'i';
-  printf("%s\n",ft_strchr(test, c));
-  printf("%s\n",strchr(test, c));
-  return 0;
+	c = '\0';
+	unsigned char *ptr;
+	*ptr = s;
+	while (n > 0)
+	{
+		*ptr = c;
+		ptr++;
+		n--;
+	}
+	return (s);
 }

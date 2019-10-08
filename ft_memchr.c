@@ -1,32 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 23:08:14 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/08 03:00:35 by mle-floc         ###   ########.fr       */
+/*   Created: 2019/10/08 23:07:46 by mle-floc          #+#    #+#             */
+/*   Updated: 2019/10/08 23:21:29 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+void *ft_memchr(const void *s, int c, size_t n)
 {
-	char tmp;
+	unsigned char *ps;
+	int i;
 
-	while (*s != (char)c)
+	ps = (unsigned char*)s;
+	i = 0;
 
-		if (!*s++ == '/0')
-			return (0);
-	return (char *)s;
-}
-
-int main(int argc, char const *argv[]) {
-  int c;
-  char test[] = "This is a string";
-
-  c = 'i';
-  printf("%s\n",ft_strchr(test, c));
-  printf("%s\n",strchr(test, c));
-  return 0;
+	while (i < n)
+	{
+		if (ps[i] == c)
+			return (s + i);
+		else
+			i++;
+	}
+	return (NULL);
 }

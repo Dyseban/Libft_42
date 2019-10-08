@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 23:08:14 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/08 03:00:35 by mle-floc         ###   ########.fr       */
+/*   Created: 2019/10/09 00:22:55 by mle-floc          #+#    #+#             */
+/*   Updated: 2019/10/09 00:22:57 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+#include <stdlib.h>
+
+char	*ft_strdup(char *src)
 {
-	char tmp;
+	int		i;
+	int		l;
+	char	*str;
 
-	while (*s != (char)c)
-
-		if (!*s++ == '/0')
-			return (0);
-	return (char *)s;
-}
-
-int main(int argc, char const *argv[]) {
-  int c;
-  char test[] = "This is a string";
-
-  c = 'i';
-  printf("%s\n",ft_strchr(test, c));
-  printf("%s\n",strchr(test, c));
-  return 0;
+	l = 0;
+	while (src[l])
+		l++;
+	str = malloc(sizeof(*str) * (l + 1));
+	i = 0;
+	while (i < l)
+	{
+		str[i] = src[i];
+		i++;
+	}
+	str[i] = '\0';
+	return (str);
 }

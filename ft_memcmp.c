@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 23:08:14 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/08 03:00:35 by mle-floc         ###   ########.fr       */
+/*   Created: 2019/10/08 23:17:47 by mle-floc          #+#    #+#             */
+/*   Updated: 2019/10/08 23:24:06 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+void *ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char tmp;
+	unsigned char *ps1;
+	unsigned char *ps2;
+	int i;
 
-	while (*s != (char)c)
+	ps1 = (unsigned char*)s1;
+	ps2 = (unsigned char*)s2;
+	i = 0;
 
-		if (!*s++ == '/0')
-			return (0);
-	return (char *)s;
-}
-
-int main(int argc, char const *argv[]) {
-  int c;
-  char test[] = "This is a string";
-
-  c = 'i';
-  printf("%s\n",ft_strchr(test, c));
-  printf("%s\n",strchr(test, c));
-  return 0;
+	while (i < n)
+	{
+		if (!(ps1[i] == ps2[i]))
+			return (s1 - s2);
+		else
+			i++;
+	}
+	return (0)
 }

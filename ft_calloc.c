@@ -1,32 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_calloc.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/07 23:08:14 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/08 03:00:35 by mle-floc         ###   ########.fr       */
+/*   Created: 2019/10/09 00:09:56 by mle-floc          #+#    #+#             */
+/*   Updated: 2019/10/09 00:15:12 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+#include <stdlib.h>
+
+void ft_bzero(void *s, size_t n)
 {
-	char tmp;
+	int c;
 
-	while (*s != (char)c)
-
-		if (!*s++ == '/0')
-			return (0);
-	return (char *)s;
+	c = '\0';
+	unsigned char *ptr;
+	*ptr = s;
+	while (n > 0)
+	{
+		*ptr = c;
+		ptr++;
+		n--;
+	}
+	return (s);
 }
 
-int main(int argc, char const *argv[]) {
-  int c;
-  char test[] = "This is a string";
+void *calloc (size_t nelem, size_t elsize)
+{
+	int *ptr;
 
-  c = 'i';
-  printf("%s\n",ft_strchr(test, c));
-  printf("%s\n",strchr(test, c));
-  return 0;
+  if (nelem == 0 || elsize == 0)
+    nelem = elsize = 1;
+
+  ptr = malloc (nelem * elsize);
+  if (ptr) ft_bzero (ptr, nelem * elsize);
+
+  return ptr;
 }
