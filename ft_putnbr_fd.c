@@ -1,21 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/07 04:10:57 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/09 01:51:06 by mle-floc         ###   ########.fr       */
+/*   Created: 2019/10/09 03:17:43 by mle-floc          #+#    #+#             */
+/*   Updated: 2019/10/09 03:24:03 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_strlen(char *str)
+void	ft_putnbr_fd(int n, int fd)
 {
-	int c;
-
-	c = 0;
-	while (str[c] != '\0')
-		c++;
-	return (c);
+	if (n == -2147483648)
+	{
+		ft_putchar_fd('-', fd);
+		ft_putchar_fd('2', fd);
+		ft_putnbr_fd(147483648, fd);
+		return ;
+	}
+	if (n < 0)
+	{
+		ft_putchar_fd('-', fd);
+		n = -n;
+	}
+	if (n >= 10)
+		ft_putnbr_fd(n / 10, fd);
+	ft_putchar_fd(n % 10 + '0', fd);
 }
