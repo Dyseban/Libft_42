@@ -6,9 +6,11 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 03:17:43 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/09 03:24:03 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/09 21:46:38 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putnbr_fd(int n, int fd)
 {

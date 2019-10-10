@@ -3,24 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mle-floc <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 14:06:17 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/06/09 15:22:18 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/09 21:46:56 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int				ft_strlen(char *str)
-{
-	int c;
-
-	c = 0;
-	while (str[c] != '\0')
-	{
-		c++;
-	}
-	return (c);
-}
+#include "libft.h"
 
 unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {

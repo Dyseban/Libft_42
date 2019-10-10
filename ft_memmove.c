@@ -6,23 +6,26 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 22:35:22 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/08 22:50:22 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/10 01:44:22 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *memmove(void *dst, const void *src, size_t len)
-{
-	char *pdst;
-	char *psrc;
-	char tmp;
-	int i;
+#include "libft.h"
 
-	i = -1;
-	*pdst = (char)dst;
-	*psrc = (char)src;
-	while (i++ < len)
-		tmp[i] = psrc[i];
-	i = -1
-	while (i++ < len)
-		pdest[i] = tmp[i]
+void	*ft_memmove(void *dst, const void *src, size_t len)
+{
+	size_t				i;
+	unsigned char		*pdst;
+	const unsigned char	*psrc;
+
+	pdst = (unsigned char*)dst;
+	psrc = (unsigned char*)src;
+	i = 0;
+	if (psrc < pdst)
+		while (++i <= len)
+			pdst[len - i] = psrc[len - i];
+	else
+		while (len-- > 0)
+			*(pdst++) = *(psrc++);
+	return (dst);
 }

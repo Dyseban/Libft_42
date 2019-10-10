@@ -6,26 +6,29 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 23:17:47 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/08 23:24:06 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/09 21:46:20 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void *ft_memcmp(const void *s1, const void *s2, size_t n)
-{
-	unsigned char *ps1;
-	unsigned char *ps2;
-	int i;
+#include "libft.h"
 
-	ps1 = (unsigned char*)s1;
-	ps2 = (unsigned char*)s2;
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
+{
+	const unsigned char *ps1;
+	const unsigned char *ps2;
+	size_t i;
+
+	ps1 = (const unsigned char*)s1;
+	ps2 = (const unsigned char*)s2;
 	i = 0;
 
 	while (i < n)
 	{
-		if (!(ps1[i] == ps2[i]))
-			return (s1 - s2);
+		if (*ps1 != *ps2)
+			return (*ps1 - *ps2);
 		else
-			i++;
+			ps1++;
+			ps2++;
 	}
-	return (0)
+	return (0);
 }

@@ -6,43 +6,32 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 10:48:50 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/08 02:33:00 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/10 02:16:33 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+#include "libft.h"
 
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	int i;
-	int k;
+	unsigned int pos;
+	unsigned int i;
 
-	i = 0;
-	while (str[i] || i == len)
+	if (!*needle)
+		return ((char*)haystack);
+	pos = 0;
+	while (haystack[pos] != '\0' && (size_t)pos < len)
 	{
-		k = 0;
-		while (to_find[k])
+		if (haystack[pos] == needle[0])
 		{
-			if (str[i + k] != to_find[k])
-				break ;
-			k++;
-			if (to_find[k] == '\0')
-				return (&str[i]);
+			i = 1;
+			while (needle[i] != '\0' && haystack[pos + i] == needle[i] &&
+					(size_t)(pos + i) < len)
+				++i;
+			if (needle[i] == '\0')
+				return ((char*)&haystack[pos]);
 		}
-		i++;
+		++pos;
 	}
-	if (!(*to_find))
-		return (str);
-	else
-		return (0);
-}
-
-int main(int argc, char const *argv[]) {
-	const char str[] = "Je suis du text trouve moi";
-	const char to_find[] = "suis";
-	size_t num = 15;
-	char *ptr;
-
-	ptr = strnstr(str, to_find, num);
-	printf("%s\n", ptr);
+	return (0);
 }

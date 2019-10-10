@@ -6,9 +6,11 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 01:38:59 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/09 01:57:56 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/09 21:46:53 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {

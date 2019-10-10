@@ -6,9 +6,11 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 22:53:47 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/08 23:07:12 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/09 21:46:13 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void		*ft_memccpy(void *dest, const void *src, int c, size_t size)
 {

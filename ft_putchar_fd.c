@@ -6,9 +6,11 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 03:09:36 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/09 03:09:54 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/09 21:46:32 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putchar_fd(char c, int fd)
 {

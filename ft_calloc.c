@@ -6,27 +6,11 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 00:09:56 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/09 00:15:12 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/09 21:45:47 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-void ft_bzero(void *s, size_t n)
-{
-	int c;
-
-	c = '\0';
-	unsigned char *ptr;
-	*ptr = s;
-	while (n > 0)
-	{
-		*ptr = c;
-		ptr++;
-		n--;
-	}
-	return (s);
-}
+#include "libft.h"
 
 void *calloc (size_t nelem, size_t elsize)
 {

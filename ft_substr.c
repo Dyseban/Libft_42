@@ -6,9 +6,11 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 01:14:22 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/09 01:38:34 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/09 21:47:21 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_substr(char *s, unsigned int start, size_t len)
 {

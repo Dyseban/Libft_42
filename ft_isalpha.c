@@ -6,13 +6,15 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 01:35:51 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/08 01:48:39 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/10 03:03:40 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isalpha(int c)
+#include "libft.h"
+
+int	ft_isalpha(int c)
 {
-	if (c >= 65 && c <= 122)
+	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
 		return (1);
 	return (0);
 }

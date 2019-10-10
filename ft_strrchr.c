@@ -6,27 +6,26 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 23:08:14 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/08 03:00:35 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/10 04:35:16 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char	*ft_strchr(const char *s, int c)
+#include "libft.h"
+
+char				*ft_strrchr(const char *s, int c)
 {
-	char tmp;
+	size_t	i;
 
-	while (*s != (char)c)
-
-		if (!*s++ == '/0')
-			return (0);
-	return (char *)s;
-}
-
-int main(int argc, char const *argv[]) {
-  int c;
-  char test[] = "This is a string";
-
-  c = 'i';
-  printf("%s\n",ft_strchr(test, c));
-  printf("%s\n",strchr(test, c));
-  return 0;
+	i = 0;
+	while (s[i])
+		i++;
+	if (c == 0)
+		return ((char *)s + i);
+	while (i > 0)
+	{
+		i--;
+		if (s[i] == c)
+			return ((char *)s + i);
+	}
+	return (NULL);
 }

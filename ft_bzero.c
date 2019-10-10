@@ -6,22 +6,23 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 21:25:07 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/08 21:28:21 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/10 01:38:49 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void ft_bzero(void *s, size_t n)
+#include "libft.h"
+
+void	ft_bzero(void *s, size_t n)
 {
-	int c;
+	unsigned int	c;
+	unsigned char	*ptr;
 
 	c = '\0';
-	unsigned char *ptr;
-	*ptr = s;
+	ptr = (unsigned char*)s;
 	while (n > 0)
 	{
 		*ptr = c;
 		ptr++;
 		n--;
 	}
-	return (s);
 }

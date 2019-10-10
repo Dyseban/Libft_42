@@ -6,14 +6,21 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 23:08:14 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/07 23:39:29 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/10 02:12:55 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != (char)c)
-		if (!*s++ == '/0')
-			return (0);
-	return (char *)s;
+	while (*s)
+	{
+		if (*s == (char)c)
+			return ((char*)s);
+		s++;
+	}
+	if (*s == (char)c)
+		return ((char*)s);
+	return (NULL);
 }

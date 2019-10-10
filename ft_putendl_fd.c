@@ -6,9 +6,11 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 03:13:18 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/09 03:15:02 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/10 01:22:28 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {
@@ -16,6 +18,6 @@ void	ft_putendl_fd(char *s, int fd)
 
 	i = -1;
 	while (s[i++])
-		write(fd, &c, 1);
+		write(fd, &s, 1);
 	write(fd, "\0", 1);
 }

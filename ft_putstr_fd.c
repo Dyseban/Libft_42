@@ -6,9 +6,11 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 03:10:20 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/09 03:11:34 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/10 01:21:40 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_putstr_fd(char *s, int fd)
 {
@@ -16,5 +18,5 @@ void	ft_putstr_fd(char *s, int fd)
 
 	i = -1;
 	while (s[i++])
-		write(fd, &c, 1);
+		write(fd, &s, 1);
 }
