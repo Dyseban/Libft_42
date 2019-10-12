@@ -6,7 +6,7 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 07:58:45 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/11 08:10:56 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/12 09:34:30 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 			ptr[i] = f(i, s[i]);
 			i++;
 		}
+		ptr[i] = '\0';
 		return (ptr);
 	}
 	return (NULL);

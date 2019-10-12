@@ -6,7 +6,7 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/11 03:23:26 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/11 03:34:11 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/13 00:10:33 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,20 +17,20 @@ char		*ft_itoa(int n)
 	unsigned int	nbr;
 	char			*str;
 	int				sign;
-	int				len;
+	int				size;
 
 	sign = (n < 0 ? 1 : 0);
 	str = NULL;
-	len = ft_lenint(n);
+	size = ft_lenint(n);
 	nbr = (n < 0 ? -n : n);
-	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
+	if (!(str = (char *)malloc(sizeof(char) * size + 1)))
 		return (NULL);
-	str[len--] = '\0';
-	while (len >= 0)
+	str[size--] = '\0';
+	while (size >= 0)
 	{
-		str[len] = nbr % 10 + '0';
+		str[size] = nbr % 10 + '0';
 		nbr = nbr / 10;
-		len--;
+		size--;
 	}
 	if (sign == 1)
 		str[0] = '-';

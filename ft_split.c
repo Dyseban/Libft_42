@@ -6,7 +6,7 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/12 07:50:10 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/12 08:02:30 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/12 23:55:32 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,10 @@ char		**ft_split(char const *s, char c)
 	{
 		l = 0;
 		if (!(str[i] = (char*)malloc(sizeof(char) * (ft_ws(&s[j], c) + 1))))
+		{
+			ft_free_2d(str, j);
 			return (NULL);
+		}
 		while (s[j] == c)
 			j++;
 		while (s[j] != c && s[j])

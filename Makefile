@@ -32,6 +32,7 @@ SRC := \
 	ft_strncat.c \
 	ft_itoa.c \
 	ft_lenint.c \
+	ft_free_2d.c \
 	ft_substr.c \
 	ft_strjoin.c \
 	ft_strmapi.c \
@@ -40,6 +41,11 @@ SRC := \
 	ft_split.c \
 	ft_cw.c \
 	ft_ws.c \
+	ft_free_2d.c \
+	ft_memchr.c \
+	ft_memmove.c \
+	ft_strncmp.c \
+	ft_strnstr.c \
 
 OBJS := $(SRC:.c=.o)
 
