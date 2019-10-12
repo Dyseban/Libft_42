@@ -6,13 +6,13 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 15:24:55 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/10 04:00:08 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/11 01:21:47 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strncmp(char *s1, char *s2, unsigned int n)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
 	if (n == 0)
 		return (0);

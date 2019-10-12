@@ -6,26 +6,27 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 14:06:17 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/09 21:46:56 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/11 03:19:28 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
+size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
-	unsigned int i;
-	unsigned int max_size_i;
-	unsigned int dest_size;
+	size_t	ln_src;
+	size_t	ln_dst;
 
-	dest_size = ft_strlen(dest);
-	i = 0;
-	max_size_i = (size - 1) - dest_size;
-	while (src[i] != '\0' && i < max_size_i)
+	ln_dst = ft_strlen(dst);
+	ln_src = ft_strlen(src);
+	if (dstsize <= ln_dst)
+		return (ln_src + dstsize);
+	if (ln_src < (dstsize - ln_dst))
+		ft_strncat(dst, src, ln_src + 1);
+	else
 	{
-		dest[dest_size + i] = src[i];
-		i++;
+		ft_strncat(dst, src, dstsize - ln_dst - 1);
+		dst[dstsize - 1] = '\0';
 	}
-	dest[dest_size + i] = '\0';
-	return (dest_size + 1);
+	return (ln_dst + ln_src);
 }

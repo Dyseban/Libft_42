@@ -1,33 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 00:22:55 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/11 00:53:31 by mle-floc         ###   ########.fr       */
+/*   Created: 2019/10/11 07:58:45 by mle-floc          #+#    #+#             */
+/*   Updated: 2019/10/11 08:10:56 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int		i;
-	int		l;
-	char	*str;
+	unsigned int	i;
+	char			*ptr;
+	int				l;
 
-	l = 0;
-	while (src[l])
-		l++;
-	str = malloc(sizeof(*str) * (l + 1));
-	i = 0;
-	while (i < l)
+	if (s && f)
 	{
-		str[i] = src[i];
-		i++;
+		i = 0;
+		l = ft_strlen((char *)s);
+		ptr = (char *)malloc(l * sizeof(ptr));
+		if (ptr == NULL)
+			return (0);
+		while (s[i] != 0)
+		{
+			ptr[i] = f(i, s[i]);
+			i++;
+		}
+		return (ptr);
 	}
-	str[i] = '\0';
-	return (str);
+	return (NULL);
 }

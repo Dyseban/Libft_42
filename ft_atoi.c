@@ -6,13 +6,13 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/12 01:57:09 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/10 05:09:57 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/11 00:37:56 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(char *str)
+int	ft_atoi(const char *str)
 {
 	int n;
 	int sign;

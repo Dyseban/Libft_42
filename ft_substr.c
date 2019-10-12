@@ -6,7 +6,7 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 01:14:22 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/09 21:47:21 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/12 05:10:30 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,19 @@
 char	*ft_substr(char *s, unsigned int start, size_t len)
 {
 	char	*dest;
+	int		i;
 
 	i = 0;
-	dest = malloc(sizeof(char * len))
+	dest = malloc(len * sizeof(char));
 	if (dest == NULL)
 		return (NULL);
-	while (len > 0) {
-		dest[i] = s[start]
+	while (len > 0)
+	{
+		dest[i] = s[start];
 		i++;
 		start++;
 		len--;
 	}
+	dest[i] = '\0';
 	return (dest);
 }

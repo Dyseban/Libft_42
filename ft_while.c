@@ -1,33 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_while.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 00:22:55 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/11 00:53:31 by mle-floc         ###   ########.fr       */
+/*   Created: 2019/10/11 03:54:16 by mle-floc          #+#    #+#             */
+/*   Updated: 2019/10/11 03:54:55 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
 
-char	*ft_strdup(const char *src)
+char	*ft_while(int size, char **strs, char *sep, char *str)
 {
-	int		i;
-	int		l;
-	char	*str;
+	int j;
+	int c;
+	int m;
+	int i;
 
-	l = 0;
-	while (src[l])
-		l++;
-	str = malloc(sizeof(*str) * (l + 1));
-	i = 0;
-	while (i < l)
+	i = -1;
+	c = 0;
+	m = 0;
+	while (++i < size)
 	{
-		str[i] = src[i];
-		i++;
+		j = 0;
+		while (strs[i][j])
+		{
+			str[c++] = strs[i][j++];
+			m++;
+		}
+		j = 0;
+		while (sep[j])
+		{
+			str[c++] = sep[j++];
+			m++;
+		}
 	}
-	str[i] = '\0';
+	str[m - j] = '\0';
 	return (str);
 }

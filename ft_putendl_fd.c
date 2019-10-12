@@ -6,7 +6,7 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 03:13:18 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/10 01:22:28 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/11 03:48:06 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,6 @@
 
 void	ft_putendl_fd(char *s, int fd)
 {
-	int i;
-
-	i = -1;
-	while (s[i++])
-		write(fd, &s, 1);
-	write(fd, "\0", 1);
+	ft_putstr_fd(s, fd);
+	ft_putchar_fd('\n', fd);
 }

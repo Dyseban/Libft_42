@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 00:22:55 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/11 00:53:31 by mle-floc         ###   ########.fr       */
+/*   Created: 2019/10/11 03:23:26 by mle-floc          #+#    #+#             */
+/*   Updated: 2019/10/11 03:34:11 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+char		*ft_itoa(int n)
 {
-	int		i;
-	int		l;
-	char	*str;
+	unsigned int	nbr;
+	char			*str;
+	int				sign;
+	int				len;
 
-	l = 0;
-	while (src[l])
-		l++;
-	str = malloc(sizeof(*str) * (l + 1));
-	i = 0;
-	while (i < l)
+	sign = (n < 0 ? 1 : 0);
+	str = NULL;
+	len = ft_lenint(n);
+	nbr = (n < 0 ? -n : n);
+	if (!(str = (char *)malloc(sizeof(char) * len + 1)))
+		return (NULL);
+	str[len--] = '\0';
+	while (len >= 0)
 	{
-		str[i] = src[i];
-		i++;
+		str[len] = nbr % 10 + '0';
+		nbr = nbr / 10;
+		len--;
 	}
-	str[i] = '\0';
+	if (sign == 1)
+		str[0] = '-';
 	return (str);
 }

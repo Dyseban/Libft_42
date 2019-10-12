@@ -5,36 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 02:07:22 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/09 21:46:45 by mle-floc         ###   ########.fr       */
+/*   Created: 2019/10/12 07:50:10 by mle-floc          #+#    #+#             */
+/*   Updated: 2019/10/12 08:02:30 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char **ft_split(char const *s, char c)
+char		**ft_split(char const *s, char c)
 {
-	int i;
-	int l;
-	int f;
-	char final;
+	int		i;
+	int		j;
+	int		l;
+	char	**str;
 
-	l = 0;
-	h = 0;
-	final = malloc(sizeof(char * (ft_strlen(s))));
-	if (final == NULL)
+	i = -1;
+	j = 0;
+	if (!s || !c || !(str = (char**)malloc(sizeof(char*) * (ft_cw(s, c) + 1))))
 		return (NULL);
-	while (s[i])
+	while (ft_cw(s, c) > ++i)
 	{
-		if (s[i] == c)
-		{
-			l = 0;
-			f++;
-			i++;
-		}
-		final[f][l] = s[i];
-		i++;
-		l++;
+		l = 0;
+		if (!(str[i] = (char*)malloc(sizeof(char) * (ft_ws(&s[j], c) + 1))))
+			return (NULL);
+		while (s[j] == c)
+			j++;
+		while (s[j] != c && s[j])
+			str[i][l++] = s[j++];
+		str[i][l] = '\0';
 	}
-	return (final);
+	str[i] = 0;
+	return (str);
 }

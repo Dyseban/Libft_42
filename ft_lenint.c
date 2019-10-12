@@ -1,33 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_lenint.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 00:22:55 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/11 00:53:31 by mle-floc         ###   ########.fr       */
+/*   Created: 2019/10/11 03:32:41 by mle-floc          #+#    #+#             */
+/*   Updated: 2019/10/11 03:34:56 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+int	ft_lenint(int nbr)
 {
-	int		i;
-	int		l;
-	char	*str;
+	int len;
 
-	l = 0;
-	while (src[l])
-		l++;
-	str = malloc(sizeof(*str) * (l + 1));
-	i = 0;
-	while (i < l)
+	len = 0;
+	len = (nbr <= 0 ? 1 : 0);
+	while (nbr != 0)
 	{
-		str[i] = src[i];
-		i++;
+		nbr = nbr / 10;
+		len++;
 	}
-	str[i] = '\0';
-	return (str);
+	return (len);
 }

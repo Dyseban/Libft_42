@@ -6,18 +6,18 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/07 04:10:57 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/09 21:55:43 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/11 01:44:28 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_strlen(char *str)
+size_t	ft_strlen(const char *s)
 {
 	int c;
 
 	c = 0;
-	while (str[c] != '\0')
+	while (s[c] != '\0')
 		c++;
 	return (c);
 }

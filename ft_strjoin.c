@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 01:38:59 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/09 21:46:53 by mle-floc         ###   ########.fr       */
+/*   Created: 2019/06/18 08:05:44 by mle-floc          #+#    #+#             */
+/*   Updated: 2019/10/11 07:56:04 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,24 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char final;
-	int i;
-	int f;
-	int l;
+	int		size_s1;
+	int		size_s2;
+	char	*newstring;
+	int		i;
+	int		f;
 
-	final = malloc(sizeof(char + (ft_strlen(s1) + ft_strlen(s2))));
-	i = -1;
-	l = -1;
-	while (s1[i++])
-		final[l++] = s1[i];
+	size_s1 = ft_strlen(s1);
+	size_s2 = ft_strlen(s2);
+	newstring = malloc((size_s2 + size_s1) * sizeof(char));
+	if (newstring == NULL)
+		return (0);
 	i = 0;
-	while (s2[i++])
-		final[l++] = s2[i];
-	return (final);
+	f = 0;
+	while (i < size_s1)
+		newstring[i++] = s1[f++];
+	f = 0;
+	while (i < (size_s1 + size_s2))
+		newstring[i++] = s2[f++];
+	newstring[i] = '\0';
+	return (newstring);
 }

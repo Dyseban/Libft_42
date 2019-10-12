@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdup.c                                        :+:      :+:    :+:   */
+/*   ft_ws.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 00:22:55 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/11 00:53:31 by mle-floc         ###   ########.fr       */
+/*   Created: 2019/10/12 07:43:33 by mle-floc          #+#    #+#             */
+/*   Updated: 2019/10/12 08:00:04 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strdup(const char *src)
+int		ft_ws(char const *str, char c)
 {
-	int		i;
-	int		l;
-	char	*str;
+	int	i;
+	int	len;
 
-	l = 0;
-	while (src[l])
-		l++;
-	str = malloc(sizeof(*str) * (l + 1));
 	i = 0;
-	while (i < l)
-	{
-		str[i] = src[i];
+	len = 0;
+	while (str[i] == c)
 		i++;
+	while (str[i] != c && str[i] != '\0')
+	{
+		i++;
+		len++;
 	}
-	str[i] = '\0';
-	return (str);
+	return (len);
 }
