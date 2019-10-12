@@ -6,7 +6,7 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 21:31:33 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/13 00:25:23 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/13 00:43:23 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ char		*ft_strtrim(char const *s1, char const *set);
 char		**ft_split(char const *s, char c);
 int			ft_ws(char const *str, char c);
 int			ft_cw(char const *s, char c);
-char		*ft_while(int size, char **strs, char *sep, char *str);
 void		*ft_free_2d(char **str, int size);
 char		*ft_substr(char const *s, unsigned int start, size_t len);
 int			ft_lenint(int nbr);
