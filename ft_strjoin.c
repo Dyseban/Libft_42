@@ -6,7 +6,7 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/18 08:05:44 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/13 04:10:21 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/13 08:16:43 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (NULL);
 	size_s1 = ft_strlen(s1);
 	size_s2 = ft_strlen(s2);
-	newstring = malloc((size_s2 + size_s1) * sizeof(char));
+	newstring = malloc((size_s2 + size_s1 + 1) * sizeof(char));
 	if (!s1 || !s2 || newstring == NULL)
 		return (NULL);
 	i = 0;
