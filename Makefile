@@ -46,6 +46,7 @@ SRC := \
 	ft_memmove.c \
 	ft_strncmp.c \
 	ft_strnstr.c \
+	ft_strdup.c \
 
 OBJS := $(SRC:.c=.o)
 

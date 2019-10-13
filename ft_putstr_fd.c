@@ -6,7 +6,7 @@
 /*   By: mle-floc <mle-floc@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 03:10:20 by mle-floc          #+#    #+#             */
-/*   Updated: 2019/10/11 03:39:31 by mle-floc         ###   ########.fr       */
+/*   Updated: 2019/10/13 04:38:06 by mle-floc         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,12 @@ void	ft_putstr_fd(char *s, int fd)
 	int i;
 
 	i = 0;
-	while (s[i])
+	if (s)
 	{
-		write(fd, &s[i], 1);
-		i++;
+		while (s[i])
+		{
+			write(fd, &s[i], 1);
+			i++;
+		}
 	}
 }
